@@ -1,0 +1,68 @@
+@import "src/variables/variables.scss";
+
+.modal {
+  position: relative;
+
+  &.close {
+    .modal__inner {
+      top: -1000px;
+    }
+
+    .modal__overflow {
+      right: auto;
+      bottom: auto;
+      background-color: transparent;
+    }
+  }
+
+  &__inner {
+    width: max-content;
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    border: 6px solid var(--color-light-blue);
+    border-top: none;
+    z-index: 20;
+    transition: all .5s linear
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-light-blue);
+    color: white;
+    padding: $flex-gap;
+  }
+
+  &__close {
+    cursor: pointer;
+  }
+
+  &__overflow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 19;
+    transition: all .5s linear;
+    cursor: pointer;
+  }
+
+  .tabpanel__inner {
+    padding: 48px $flex-gap;
+    position: relative;
+    max-width: 800px;
+  }
+
+  .tabpanel__left::after {
+    top: 135px;
+    height: 265px;
+  }
+}

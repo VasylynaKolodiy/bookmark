@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Header from "./components/Header/Header";
+import {BrowserRouter} from "react-router-dom";
+import Hero from "./components/Hero/Hero";
+import Features from "./components/Features/Features";
+import Extensions from "./components/Extensions/Extensions";
+import Faqs from "./components/Faqs/Faqs";
+import Footer from "./components/Footer/Footer";
+import Modal from "./components/Modal/Modal";
+import React, {useState} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [isModalClose, setIsModalClose] = useState(true);
+
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <Header/>
+                <main>
+                    <Hero/>
+                    <Features/>
+                    <Extensions/>
+                    <Faqs/>
+                    <Modal isModalClose={isModalClose} setIsModalClose={setIsModalClose}/>
+                </main>
+                <Footer/>
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;

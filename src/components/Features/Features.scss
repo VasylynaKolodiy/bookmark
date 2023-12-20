@@ -1,0 +1,43 @@
+@import "src/variables/variables.scss";
+
+.features {
+  flex-direction: column;
+
+  &__inner {
+    padding: $flex-gap 0;
+  }
+
+  // TabContext
+  .MuiButtonBase-root {
+    font-family: $font-rubik;
+    text-transform: capitalize;
+    font-size: 18px;
+    color: var(--color-gray);
+    padding: 0 50px;
+    transition: all .3s linear;
+
+    &:hover{
+      color: var(--color-light-red);
+    }
+
+    &.Mui-selected {
+      color: var(--color-dark-blue);
+    }
+  }
+
+  .MuiTabs-flexContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: calc(#{$flex-gap} / 2);
+    border-bottom: 3px solid var(--color-light-gray);
+    width: max-content;
+    margin: -13px auto 0 auto;
+  }
+
+  .MuiTabs-indicator {
+    height: 3px;
+    background-color: var(--color-light-red);
+  }
+}
+

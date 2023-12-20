@@ -1,0 +1,42 @@
+@import "./src/variables/variables.scss";
+
+.button {
+  padding: 10px $flex-gap;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-family: $font-rubik;
+  font-size: $font-size-small;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  transition: all .3s linear;
+  white-space: nowrap;
+
+  &.color-light-red {
+    border: 2px solid var(--color-light-red);
+  }
+
+  &.color-light-blue {
+    border: 2px solid var(--color-light-blue);
+  }
+
+  &.color-light-gray{
+    color: var(--color-dark-blue);
+    border: 2px solid var(--color-light-gray);
+  }
+
+  &:hover {
+    background-color: white !important;
+
+    &.color-light-red {
+      color: var(--color-light-red);
+    }
+
+    &.color-light-blue {
+      color: var(--color-light-blue);
+    }
+
+    &.color-light-gray{
+      border: 2px solid var(--color-dark-blue);
+    }
+  }
+}

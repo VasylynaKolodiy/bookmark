@@ -1,0 +1,39 @@
+@import "src/variables/variables.scss";
+
+.faqs{
+  .accordion{
+    border-top: 1px solid var(--color-light-gray);
+    border-bottom: 1px solid darkgray;
+    max-width: 50%;
+    margin: 0 auto calc(#{$flex-gap} * 2) auto;
+
+    &__text{
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  // Accordion
+  .MuiButtonBase-root{
+    border-top: 1px solid darkgray;
+  }
+
+  .MuiPaper-root.MuiPaper-elevation{
+    box-shadow: none;
+  }
+
+  .MuiAccordionSummary-content {
+    transition: all .3s linear;
+    padding: calc(#{$flex-gap} / 2) 0;
+
+    &:hover {
+      color: var(--color-light-red);
+    }
+  }
+
+  .MuiAccordionSummary-expandIconWrapper.Mui-expanded {
+    & svg path{
+      stroke: var(--color-light-red);
+    }
+  }
+
+}
