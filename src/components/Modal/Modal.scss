@@ -1,4 +1,4 @@
-@import "src/variables/variables.scss";
+@import "../../assets/variables/variables.scss";
 
 .modal {
   position: relative;
@@ -8,7 +8,7 @@
       top: -1000px;
     }
 
-    .modal__overflow {
+    .modal__overlay {
       right: auto;
       bottom: auto;
       background-color: transparent;
@@ -16,7 +16,8 @@
   }
 
   &__inner {
-    width: max-content;
+    width: 80vw;
+    max-width: 800px;
     margin: 0 auto;
     position: fixed;
     top: 50%;
@@ -27,7 +28,7 @@
     border: 6px solid var(--color-light-blue);
     border-top: none;
     z-index: 20;
-    transition: all .5s linear
+    transition: all .5s linear;
   }
 
   &__header {
@@ -36,33 +37,66 @@
     justify-content: space-between;
     background-color: var(--color-light-blue);
     color: white;
-    padding: $flex-gap;
+    padding: $gap;
+  }
+
+  &__title {
+    @media (max-width: $mobile) {
+      font-size: 18px;
+    }
   }
 
   &__close {
     cursor: pointer;
   }
 
-  &__overflow {
+  &__overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: var(--color-dark-blue);
+    opacity: 0.9;
     z-index: 19;
     transition: all .5s linear;
     cursor: pointer;
   }
 
   .tabpanel__inner {
-    padding: 48px $flex-gap;
+    padding: calc(#{$gap} * 2) 0;
     position: relative;
     max-width: 800px;
+    align-items: center;
+
+    @media (max-width: $mobile) {
+      max-height: 70vh;
+      padding: $gap 0;
+      gap: 0;
+    }
   }
 
-  .tabpanel__left::after {
-    top: 135px;
-    height: 265px;
+  .tabpanel__left {
+    padding: 0 0 0 $gap;
+
+    @media (max-width: $mobile) {
+      width: 50%;
+    }
   }
+
+  .tabpanel__right {
+    padding: 0 $gap 0 0;
+
+    @media (max-width: $mobile) {
+      padding: 0 10px;
+      font-size: 16px;
+      gap: 0;
+
+      & p {
+        font-size: 14px;
+      }
+    }
+  }
+
+
 }

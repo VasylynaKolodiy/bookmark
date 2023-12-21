@@ -7,10 +7,20 @@ import Extensions from "./components/Extensions/Extensions";
 import Faqs from "./components/Faqs/Faqs";
 import Footer from "./components/Footer/Footer";
 import Modal from "./components/Modal/Modal";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 function App() {
     const [isModalClose, setIsModalClose] = useState(true);
+
+    useEffect(() => {
+        const handleMouseMove = (event) => {
+            if (event.clientY <= 14) {
+                setIsModalClose(false);
+            }
+        };
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, [setIsModalClose]);
 
     return (
         <div className="App">

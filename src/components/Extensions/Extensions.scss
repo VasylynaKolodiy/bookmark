@@ -1,14 +1,17 @@
-@import "src/variables/variables.scss";
+@import "../../assets/variables/variables.scss";
 
 .extensions {
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
 
   &__list {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: calc(#{$flex-gap} * 2);
-  }
+    gap: calc(#{$gap} * 2);
 
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
 }

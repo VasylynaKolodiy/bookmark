@@ -1,10 +1,10 @@
-@import "src/variables/variables.scss";
+@import "../../assets/variables/variables.scss";
 
 .features {
   flex-direction: column;
 
   &__inner {
-    padding: $flex-gap 0;
+    padding: $gap 0;
   }
 
   // TabContext
@@ -20,8 +20,30 @@
       color: var(--color-light-red);
     }
 
+    @media (max-width: $mobile) {
+      padding: 20px 0;
+      width: 100% !important;
+      border-bottom: 3px solid var(--color-light-gray);
+      max-width: 100%;
+      margin: 0 50px;
+    }
+
     &.Mui-selected {
       color: var(--color-dark-blue);
+
+      @media (max-width: $mobile) {
+        width: 100%;
+      }
+
+      & .MuiTouchRipple-root{
+        border-bottom: 3px solid transparent;
+
+        @media (max-width: $mobile) {
+          border-bottom: 3px solid var(--color-light-red);
+          width: 40%;
+          margin: 0 auto;
+        }
+      }
     }
   }
 
@@ -29,15 +51,43 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: calc(#{$flex-gap} / 2);
+    padding-bottom: calc(#{$gap} / 2);
     border-bottom: 3px solid var(--color-light-gray);
     width: max-content;
     margin: -13px auto 0 auto;
+
+    @media (max-width: $mobile) {
+      width: 100% !important;
+      flex-direction: column;
+      position: static;
+      border-bottom: none;
+      border-top: 3px solid var(--color-light-gray);
+      margin: 1px 0 0 0;
+    }
   }
 
   .MuiTabs-indicator {
     height: 3px;
     background-color: var(--color-light-red);
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
   }
+
+  @media (max-width: $mobile) {
+    .MuiTabs-scroller{
+      width: 100% !important;
+    }
+
+    .MuiTabs-root{
+      width: 100% !important;
+      padding: 0 50px;
+    }
+
+
+  }
+
+
 }
 

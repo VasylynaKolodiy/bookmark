@@ -1,7 +1,7 @@
-@import "./src/variables/variables.scss";
+@import "../../assets/variables/variables.scss";
 
 .button {
-  padding: 10px $flex-gap;
+  padding: 10px $gap;
   border-radius: 6px;
   color: white;
   cursor: pointer;
@@ -10,6 +10,14 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   transition: all .3s linear;
   white-space: nowrap;
+
+  @media (max-width: $phablet) {
+    padding: 10px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: $font-size-mini;
+  }
 
   &.color-light-red {
     border: 2px solid var(--color-light-red);

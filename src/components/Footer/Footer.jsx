@@ -25,7 +25,7 @@ const Footer = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (email.includes('@') && email !== '') {
+        if (email.includes('@') && email !== '' && email.includes('.')) {
             setIsEmailValid(true);
             setEmail("");
         } else {

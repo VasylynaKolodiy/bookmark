@@ -1,11 +1,32 @@
-@import "src/variables/variables.scss";
+@import "../../assets/variables/variables.scss";
 
 .faqs{
+
+  &__info{
+    @media (max-width: $phablet) {
+      width: 80%;
+      max-width: none;
+    }
+
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
   .accordion{
     border-top: 1px solid var(--color-light-gray);
     border-bottom: 1px solid darkgray;
     max-width: 50%;
-    margin: 0 auto calc(#{$flex-gap} * 2) auto;
+    margin: 0 auto calc(#{$gap} * 2) auto;
+
+    @media (max-width: $phablet) {
+      width: 80%;
+      max-width: none;
+    }
+
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
 
     &__text{
       color: rgba(0, 0, 0, 0.6);
@@ -23,7 +44,7 @@
 
   .MuiAccordionSummary-content {
     transition: all .3s linear;
-    padding: calc(#{$flex-gap} / 2) 0;
+    padding: calc(#{$gap} / 2) 0;
 
     &:hover {
       color: var(--color-light-red);

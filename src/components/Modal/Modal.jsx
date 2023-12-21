@@ -16,7 +16,7 @@ const Modal = ({isModalClose, setIsModalClose}) => {
 
     return (
         <div className={`modal ${isModalClose ? 'close' : ''}`}>
-            <div className="modal__overflow" onClick={() => setIsModalClose(true)}/>
+            <div className="modal__overlay" onClick={() => setIsModalClose(true)}/>
             <div className="modal__inner">
                 <div className="modal__header">
                     <h2 className="modal__title title">Download The Extension</h2>

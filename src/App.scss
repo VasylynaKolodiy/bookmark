@@ -1,4 +1,4 @@
-@import 'variables/variables.scss';
+@import 'assets/variables/variables.scss';
 
 *,
 *::before,
@@ -9,6 +9,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -51,6 +52,10 @@ img, svg {
   max-width: calc(1440px + 130px + 130px);
   margin: 0 auto;
   padding: 0 130px;
+
+  @media (max-width: $desktop) {
+    padding: 0 50px;
+  }
 }
 
 .title{
@@ -69,18 +74,30 @@ img, svg {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: calc(24px * 2);
+  gap: calc(#{$gap} * 2);
   max-width: 45%;
-  margin: 0 auto calc(24px * 2) auto;
+  margin: 0 auto calc(#{$gap} * 2) auto;
+
+  @media (max-width: $phablet) {
+    width: 80%;
+    max-width: none;
+  }
+
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
 }
 
 section {
-  margin: calc(#{$flex-gap} * 2) 0;
+  margin: calc(#{$gap} * 2) 0;
   scroll-margin-top: 60px;
-  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
   position: relative;
+
+  @media (max-width: $mobile) {
+    margin: $gap 0;
+  }
 }
 
 

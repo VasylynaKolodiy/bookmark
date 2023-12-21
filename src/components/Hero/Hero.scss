@@ -1,4 +1,4 @@
-@import "src/variables/variables.scss";
+@import "../../assets/variables/variables.scss";
 
 .hero {
   margin-top: 80px;
@@ -8,42 +8,73 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: $flex-gap;
-    padding: $flex-gap 0;
+    gap: $gap;
+    padding: $gap 0;
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: calc(#{$gap} * 2);
+    }
   }
 
   &__left {
-    flex-basis: 40%;
+    flex-basis: 45%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: calc(#{$flex-gap} * 2);
+    gap: calc(#{$gap} * 2);
+
+    @media (max-width: $mobile) {
+      order: 1;
+      align-items: center;
+      text-align: center;
+      padding: 0 50px;
+      align-self: stretch;
+    }
   }
 
   &__right {
     flex-basis: 50%;
+    position: relative;
 
     &::after {
       content: "";
       background-color: var(--color-light-blue);
       border-bottom-left-radius: 100px;
       position: absolute;
+      top: 20%;
       right: 0;
+      bottom: -10%;
+      left: 20%;
       z-index: -1;
-      height: 350px;
-      width: 35%;
-      top: 65%;
-      transform: translateY(-65%);
+    }
+
+    @media (max-width: $mobile) {
+      margin-bottom: calc(#{$gap} * 2);
+      align-self: stretch;
+      padding-left: 20px;
     }
   }
 
   &__title{
     font-size: 42px;
+
+    @media (max-width: $desktop) {
+      font-size: 36px;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 32px;
+    }
   }
 
   &__buttons {
     display: flex;
-    gap: $flex-gap;
+    gap: $gap;
+
+    @media (max-width: $mobile) {
+      justify-content: center;
+    }
   }
 
   &__container{
@@ -52,5 +83,13 @@
     margin: 0 auto;
     padding: 0 0 0 130px;
     display: flex;
+
+    @media (max-width: $desktop) {
+      padding: 0 0 0 50px;
+    }
+
+    @media (max-width: $mobile) {
+      padding: 0;
+    }
   }
 }
